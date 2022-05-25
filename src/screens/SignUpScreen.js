@@ -3,6 +3,7 @@ import React, {useState} from 'react'
 import useWindowDimensions from 'react-native/Libraries/Utilities/useWindowDimensions';
 import CustomInput from './../components/CustomInput/CustomInput';
 import CustomButton from '../components/CustomButton/CustomButton';
+import SocialSignInButtons from '../components/SocialSignInButtons/SocialSignInButtons';
 const SignUpScreen = () => {
 
     const [username, setUserName] = useState('');
@@ -15,8 +16,8 @@ const SignUpScreen = () => {
         console.warn("Registered");
     }
 
-    const onSignUpPress = () => {
-        console.warn("Sign Up");
+    const onSignInPress = () => {
+        console.warn("Sign In");
     }
 
     const onTermsPressed = () => {
@@ -25,22 +26,6 @@ const SignUpScreen = () => {
 
     const onPrivacyPolicyPressed = () =>{
         console.warn("Privacy Policy Pressed")
-    }
-
-    const onSignInFacebook = () => {
-        console.warn("Sign In Facebook");
-    }
-
-    const onSignInGoogle = () => {
-        console.warn("Sign In Google");
-    }
-
-    const onSignInApple = () => {
-        console.warn("Sign In Apple");
-    }
-
-    const onForgotPasswordPress = () => {
-        console.warn("Forgot Password");
     }
 
   return (
@@ -55,12 +40,11 @@ const SignUpScreen = () => {
 
             <Text style={styles.text}>By Registering, you confirm that you accept our <Text style={styles.link} onPress={onTermsPressed}>Terms of Use</Text> and <Text style={styles.link} onPress={onPrivacyPolicyPressed}>Privacy Policy</Text></Text>
 
-            <CustomButton text="Sign In with Facebook" onPress={onSignInFacebook} bgColor="#E7EAF4" fgColor="#4765A9"/>
-            <CustomButton text="Sign In with Google" onPress={onSignInGoogle} bgColor="#FAE9EA" fgColor="#DD4D44"/>
-            <CustomButton text="Sign In with Apple ID" onPress={onSignInApple} bgColor="#E3E3E3" fgColor="#363636"/>
+            
+            <SocialSignInButtons/>
             
 
-            <CustomButton text="Don't have an account? Create one" onPress={onSignUpPress} type="TERTIARY"/>
+            <CustomButton text="Have an Account? Sign In" onPress={onSignInPress} type="TERTIARY"/>
 
         </View>
     </ScrollView>
