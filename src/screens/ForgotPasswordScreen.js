@@ -2,11 +2,11 @@ import { View, Text, StyleSheet, ScrollView } from 'react-native'
 import React, {useState} from 'react'
 import CustomInput from './../components/CustomInput/CustomInput';
 import CustomButton from '../components/CustomButton/CustomButton';
-const ConfirmEmailScreen = () => {
+const ForgotPasswordScreen = () => {
 
-    const [code, setCode] = useState('');
+    const [username, setUserName] = useState('');
 
-    const onConfirmPress = () => {
+    const onSendPress = () => {
         console.warn("Registered");
     }
 
@@ -14,17 +14,12 @@ const ConfirmEmailScreen = () => {
         console.warn("Sign In");
     }
 
-    const onResendPress = () => {
-        console.warn("Sign In");
-    }
-
   return (
     <ScrollView showsVerticalScrollIndicator={false}>
         <View style={styles.root}>
-            <Text style={styles.title}>Confirm your Email</Text>
-            <CustomInput placeholder="Enter your Confirmation Code" value={code} setValue={setCode}/>
-            <CustomButton text="Confirm" onPress={onConfirmPress}/>
-            <CustomButton text="Resend Code" onPress={onResendPress} type="SECONDARY"/>
+            <Text style={styles.title}>Reset Your Password</Text>
+            <CustomInput placeholder="Enter your User Name" value={username} setValue={setUserName}/>
+            <CustomButton text="SEND" onPress={onSendPress}/>
             <CustomButton text="Back to Sign In" onPress={onSignInPress} type="TERTIARY"/>
 
         </View>
@@ -54,4 +49,4 @@ const styles = StyleSheet.create({
     }
 })
 
-export default ConfirmEmailScreen
+export default ForgotPasswordScreen

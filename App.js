@@ -1,6 +1,7 @@
 import { StatusBar as ExpoStatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View, SafeAreaView, StatusBar } from 'react-native';
 import ConfirmEmailScreen from './src/screens/ConfirmEmailScreen';
+import ForgotPasswordScreen from './src/screens/ForgotPasswordScreen';
 import SignInScreen from './src/screens/SignInScreen';
 import SignUpScreen from './src/screens/SignUpScreen';
 export default function App() {
@@ -8,7 +9,8 @@ export default function App() {
     <SafeAreaView style={{flex:1, marginTop: StatusBar.currentHeight}}>
         {/* <SignInScreen/> */}
         {/* <SignUpScreen/> */}
-        <ConfirmEmailScreen/>
+        {/* <ConfirmEmailScreen/> */}
+        <ForgotPasswordScreen/>
         <ExpoStatusBar style="auto" />
     </SafeAreaView>
   );
