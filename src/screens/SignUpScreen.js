@@ -35,7 +35,7 @@ const SignUpScreen = () => {
             <CustomInput placeholder="User Name" value={username} setValue={setUserName}/>
             <CustomInput placeholder="User Name" value={email} setValue={setUserEmail}/>
             <CustomInput placeholder="Password" value={password} setValue={setPassword} secureTextEntry={true}/>
-            <CustomInput placeholder="Password" value={passwordRepeat} setValue={setPasswordRepeat} secureTextEntry={true}/>
+            <CustomInput placeholder="Confirm Password" value={passwordRepeat} setValue={setPasswordRepeat} secureTextEntry={true}/>
             <CustomButton text="Register" onPress={onRegisterPress}/>
 
             <Text style={styles.text}>By Registering, you confirm that you accept our <Text style={styles.link} onPress={onTermsPressed}>Terms of Use</Text> and <Text style={styles.link} onPress={onPrivacyPolicyPressed}>Privacy Policy</Text></Text>
@@ -55,7 +55,7 @@ const styles = StyleSheet.create({
     root:{
         alignItems: 'center',
         padding: 20,
-        backgroundColor: '#c4e3f3',
+        // backgroundColor: '#c4e3f3',
         height: '100%'
     },
     title:{
