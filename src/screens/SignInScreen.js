@@ -4,34 +4,30 @@ import Logo from '../../assets/images/Logo_1.png'
 import useWindowDimensions from 'react-native/Libraries/Utilities/useWindowDimensions';
 import CustomInput from './../components/CustomInput/CustomInput';
 import CustomButton from '../components/CustomButton/CustomButton';
+import { useNavigation } from '@react-navigation/native';
+import SocialSignInButtons from './../components/SocialSignInButtons/SocialSignInButtons';
+
 const SignInScreen = () => {
 
     const [username, setUserName] = useState('');
     const [password, setPassword] = useState('');
     const {height} = useWindowDimensions();
 
+    const navigation = useNavigation();
+
     const onSignInPress = () => {
         console.warn("Sign In");
+        navigation.navigate('Home');
     }
 
     const onSignUpPress = () => {
         console.warn("Sign Up");
-    }
-
-    const onSignInFacebook = () => {
-        console.warn("Sign In Facebook");
-    }
-
-    const onSignInGoogle = () => {
-        console.warn("Sign In Google");
-    }
-
-    const onSignInApple = () => {
-        console.warn("Sign In Apple");
+        navigation.navigate('SignUp');
     }
 
     const onForgotPasswordPress = () => {
         console.warn("Forgot Password");
+        navigation.navigate('ForgotPassword');
     }
 
   return (
@@ -43,9 +39,7 @@ const SignInScreen = () => {
             <CustomButton text="Sign In" onPress={onSignInPress}/>
             <CustomButton text="Forgot password" onPress={onForgotPasswordPress} type="TERTIARY"/>
 
-            <CustomButton text="Sign In with Facebook" onPress={onSignInFacebook} bgColor="#E7EAF4" fgColor="#4765A9"/>
-            <CustomButton text="Sign In with Google" onPress={onSignInGoogle} bgColor="#FAE9EA" fgColor="#DD4D44"/>
-            <CustomButton text="Sign In with Apple ID" onPress={onSignInApple} bgColor="#E3E3E3" fgColor="#363636"/>
+            <SocialSignInButtons />
             
 
             <CustomButton text="Don't have an account? Create one" onPress={onSignUpPress} type="TERTIARY"/>

@@ -4,6 +4,8 @@ import useWindowDimensions from 'react-native/Libraries/Utilities/useWindowDimen
 import CustomInput from './../components/CustomInput/CustomInput';
 import CustomButton from '../components/CustomButton/CustomButton';
 import SocialSignInButtons from '../components/SocialSignInButtons/SocialSignInButtons';
+import { useNavigation } from '@react-navigation/native';
+
 const SignUpScreen = () => {
 
     const [username, setUserName] = useState('');
@@ -12,12 +14,16 @@ const SignUpScreen = () => {
     const [password, setPassword] = useState('');
     const [passwordRepeat, setPasswordRepeat] = useState('');
 
+    const navigation = useNavigation();
+
     const onRegisterPress = () => {
         console.warn("Registered");
+        navigation.navigate('ConfirmEmail');
     }
 
     const onSignInPress = () => {
         console.warn("Sign In");
+        navigation.navigate('SignIn');
     }
 
     const onTermsPressed = () => {
